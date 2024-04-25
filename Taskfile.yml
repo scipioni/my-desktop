@@ -1,0 +1,24 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  setup:
+    desc: setup
+    cmds:
+      - |
+        export LANG=C
+        yes | yay -S fish
+
+  save:
+    desc: save deafult profile
+    cmds:
+      - konsave -s default -f
