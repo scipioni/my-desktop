@@ -16,7 +16,7 @@ tasks:
     cmds:
       - |
         export LANG=C
-        yes | yay -S fish
+        yes | yay -S fish plasma-workspace-agent-ssh 
 
   save:
     desc: save deafult profile
