@@ -16,9 +16,25 @@ tasks:
     cmds:
       - |
         export LANG=C
-        yes | yay -S fish plasma-workspace-agent-ssh 
+        yes | yay -S \
+          fish \
+          plasma-workspace-agent-ssh \
+          ttf-meslo-nerd
+
+
+  fish:
+    desc: configure fish
+    cmds:
+      - |
+        curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+        fisher update
+        fish_update_completions
+        fisher install IlanCosman/tide@v6
+
+
 
   save:
     desc: save deafult profile
     cmds:
       - konsave -s default -f
+      - konsave -e default -d /tmp
