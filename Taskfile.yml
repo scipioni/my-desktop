@@ -19,18 +19,29 @@ tasks:
         yes | yay -S \
           fish \
           plasma-workspace-agent-ssh \
-          ttf-meslo-nerd
+          ttf-meslo-nerd \
+          konsave
+        mkdir -p ~/.config/konsave
+        ln -sf ~/my-desktop/conf.yaml ~/.config/konsave/conf.yaml
+
+  kde:
+    desc: install kde
+    cmds:
+        - |
+          yes | yay -S (eos-packagelist KDE-Desktop)
+          yes | yay -S stl-thumb-kde        
 
 
   fish:
     desc: configure fish
     cmds:
       - |
+        /usr/bin/fish
         curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
         fisher update
         fish_update_completions
         fisher install IlanCosman/tide@v6
-
+        tide configure
 
 
   save:
@@ -38,3 +49,9 @@ tasks:
     cmds:
       - konsave -s default -f
       - konsave -e default -d /tmp
+
+  load:
+    desc: load profile from file
+    cmds:
+      - konsave -i {{.CLI_ARGS}}
+      - konsave -a default
