@@ -28,8 +28,14 @@ tasks:
     desc: install kde
     cmds:
         - |
-          yes | yay -S (eos-packagelist KDE-Desktop)
+          yes | yay -S $(eos-packagelist KDE-Desktop)
           yes | yay -S stl-thumb-kde        
+
+  sddm:
+    desc: enable sddm login manager
+    cmds:
+      - systemctl disable gdm
+      - systemctl enable sddm
 
 
   fish:
