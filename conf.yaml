@@ -65,7 +65,7 @@ save:
             - lightlyrc
             - ksplashrc
             - khotkeysrc
-            - fish
+            #- fish
 
     app_layouts:
         location: "$HOME/.local/share/kxmlgui5"
