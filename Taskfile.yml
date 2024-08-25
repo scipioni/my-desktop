@@ -42,6 +42,7 @@ tasks:
         fish_update_completions
         fisher install IlanCosman/tide@v6
         tide configure
+        fisher install Asim-Tahir/docker-compose.fish
 
   save:
     desc: save deafult profile
