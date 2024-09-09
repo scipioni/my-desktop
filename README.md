@@ -22,14 +22,21 @@ task kde
 
 ## neovim
 
-- https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/
-- https://github.com/tokiory/neovim-boilerplate
+- https://nvchad.com
 
 ```
 task neovim
 ```
 
-add to ~/.config/fish/config.fish
+cheatsheet (leader is space)
 ```
-source /opt/asdf-vm/asdf.fish
+<leader>ch open cheatsheet
+
+```
+
+### with python
+
+python language server
+```
+pip install pylyzer
 ```

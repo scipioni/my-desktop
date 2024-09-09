@@ -69,7 +69,6 @@ tasks:
   neovim:
     desc: setup neovim
     cmds:
-      - yay -S asdf-vm luarocks
       - mkdir -p ~/.config/nvim
-      - rsync nvim/ ~/.config/nvim/ 
+      - git clone https://github.com/NvChad/starter ~/.config/nvim && nvim 
 
