@@ -70,5 +70,6 @@ tasks:
     desc: setup neovim
     cmds:
       - mkdir -p ~/.config/nvim
-      - git clone https://github.com/NvChad/starter ~/.config/nvim && nvim 
+      - yay -S ripgrep
+      - git clone git@github.com:scipioni/starter.git ~/.config/nvim && nvim 
 
