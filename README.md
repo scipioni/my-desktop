@@ -23,6 +23,7 @@ task kde
 ## neovim
 
 - https://nvchad.com
+- https://github.com/ProgrammingRainbow/NvChad-2.5
 
 ```
 task neovim
@@ -34,7 +35,7 @@ cheatsheet (leader is space)
 
 ```
 
-### with python
+### ~~with python~~
 
 python language server
 ```
