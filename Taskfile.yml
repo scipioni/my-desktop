@@ -48,7 +48,7 @@ tasks:
         fish_update_completions
         fisher install IlanCosman/tide@v6
         tide configure
-
+        fisher install Asim-Tahir/docker-compose.fish
 
   save:
     desc: save deafult profile
@@ -61,3 +61,20 @@ tasks:
     cmds:
       - konsave -i {{.CLI_ARGS}}
       - konsave -a default
+
+  ssh-agent:
+    desc: enable ssh agent as service
+    cmds:
+      - |
+        mkdir -p ~/.config/environment.d/
+        echo 'SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"' > ~/.config/environment.d/ssh_auth_socket.conf
+        systemctl --user enable --now ssh-agent
+
+        grep -q  AddKeysToAgent  ~/.ssh/config || echo 'AddKeysToAgent  yes' >> ~/.ssh/config
+
+  neovim:
+    desc: setup neovim
+    cmds:
+      - mkdir -p ~/.config/nvim
+      - git clone https://github.com/NvChad/starter ~/.config/nvim && nvim 
+
