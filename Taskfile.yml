@@ -20,6 +20,10 @@ tasks:
           fish \
           plasma-workspace-agent-ssh \
           ttf-meslo-nerd \
+          neovim \
+          neovide \
+          git-delta \
+          lazygit \
           konsave
         mkdir -p ~/.config/konsave
         ln -sf ~/my-desktop/conf.yaml ~/.config/konsave/conf.yaml
