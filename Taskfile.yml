@@ -24,7 +24,9 @@ tasks:
           neovide \
           git-delta \
           lazygit \
-          konsave
+          konsave \
+          xsel \
+          xclip
         mkdir -p ~/.config/konsave
         ln -sf ~/my-desktop/conf.yaml ~/.config/konsave/conf.yaml
 
