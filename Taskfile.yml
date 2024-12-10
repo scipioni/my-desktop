@@ -18,17 +18,14 @@ tasks:
         export LANG=C
         yes | yay -S \
           fish \
-          plasma-workspace-agent-ssh \
           ttf-meslo-nerd \
           neovim \
           neovide \
           git-delta \
           lazygit \
-          konsave \
           xsel \
           xclip
         mkdir -p ~/.config/konsave
-        ln -sf ~/my-desktop/conf.yaml ~/.config/konsave/conf.yaml
 
   kde:
     desc: install kde
@@ -92,3 +89,8 @@ tasks:
       - git clone git@github.com:scipioni/nvim.git ~/.config/nvim && nvim 
       #- git clone https://github.com/LazyVim/starter ~/.config/nvim && nvim
 
+  user-dir:
+    desc: set home folders name
+    cmds:
+      - echo "en_US" > ~/.config/user-dirs.locale
+      - xdg-user-dirs-update --force
