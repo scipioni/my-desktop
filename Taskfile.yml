@@ -24,7 +24,8 @@ tasks:
           git-delta \
           lazygit \
           xsel \
-          xclip
+          xclip \
+          firefox-tridactyl-native-bin
         mkdir -p ~/.config/konsave
 
   kde:
