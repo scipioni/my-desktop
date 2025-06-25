@@ -94,3 +94,8 @@ tasks:
     cmds:
       - echo "en_US" > ~/.config/user-dirs.locale
       - xdg-user-dirs-update --force
+
+  gnome:
+    desc: customize gnome settings
+    cmds:
+      - dconf write /org/gnome/shell/extensions/pano/global-shortcut "['<Alt>v']"
