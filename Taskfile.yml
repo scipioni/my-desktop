@@ -25,7 +25,8 @@ tasks:
           lazygit \
           xsel \
           xclip \
-          firefox-tridactyl-native-bin
+          firefox-tridactyl-native-bin \
+          chezmoi
         mkdir -p ~/.config/konsave
 
   kde:
@@ -100,3 +101,9 @@ tasks:
     desc: customize gnome settings
     cmds:
       - dconf write /org/gnome/shell/extensions/pano/global-shortcut "['<Alt>v']"
+
+  chezmoi:init:
+    desc: setup chezmoi on new machine
+    cmds:
+      - chezmoi init cubo:~/dotfiles.git
+      - chezmoi apply
