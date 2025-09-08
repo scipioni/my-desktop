@@ -55,6 +55,17 @@ tasks:
         tide configure
         fisher install Asim-Tahir/docker-compose.fish
         fisher install edc/bass
+      - task fish:autoenv
+
+
+  fish:autoenv:
+    cmds:
+      - |
+        fisher install aohorodnyk/fish-autovenv
+        set -U autovenv_enable yes
+        set -U autovenv_announce yes
+        set -U autovenv_dir .venv
+
 
   save:
     desc: save deafult profile
