@@ -61,6 +61,7 @@ tasks:
   fish:autoenv:
     cmds:
       - |
+        /usr/bin/fish
         fisher install aohorodnyk/fish-autovenv
         set -U autovenv_enable yes
         set -U autovenv_announce yes
