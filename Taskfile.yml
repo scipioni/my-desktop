@@ -55,6 +55,7 @@ tasks:
         tide configure
         fisher install Asim-Tahir/docker-compose.fish
         fisher install edc/bass
+        fisher install realiserad/fish-ai
       - task fish:autoenv
 
 
