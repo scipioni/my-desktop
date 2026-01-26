@@ -18,7 +18,7 @@ tasks:
         export LANG=C
         yes | yay -S \
           fish \
-          ttf-meslo-nerd \
+          ttf-firacode-nerd \
           neovim \
           neovide \
           git-delta \
@@ -45,14 +45,12 @@ tasks:
 
   fish:
     desc: configure fish
+    sh: fish
     cmds:
       - |
-        /usr/bin/fish
         curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
         fisher update
         fish_update_completions
-        fisher install IlanCosman/tide@v6
-        tide configure
         fisher install Asim-Tahir/docker-compose.fish
         fisher install edc/bass
         fisher install realiserad/fish-ai
@@ -60,9 +58,9 @@ tasks:
 
 
   fish:autoenv:
+    sh: fish
     cmds:
       - |
-        /usr/bin/fish
         fisher install aohorodnyk/fish-autovenv
         set -U autovenv_enable yes
         set -U autovenv_announce yes
