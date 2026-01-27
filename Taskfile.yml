@@ -29,6 +29,12 @@ tasks:
           chezmoi
         mkdir -p ~/.config/konsave
 
+  setup:locale:
+    desc: "fix locale settings"
+    cmds:
+      - sudo sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && sudo locale-gen
+
+
   kde:
     desc: install kde
     cmds:
@@ -125,4 +131,6 @@ tasks:
       - dconf load /org/gnome/settings-daemon/plugins/media-keys/ < gnome/custom-keys.dconf
       - dconf write /org/gnome/shell/extensions/clipboard-indicator/toggle-menu "['<Alt>v']"
       - dconf write /org/gnome/shell/extensions/pano/global-shortcut "['<Alt>v']"
+      - xdg-mime default nemo.desktop inode/directory x-scheme-handler/file
+      - gsettings set org.gnome.desktop.background show-desktop-icons false
 
