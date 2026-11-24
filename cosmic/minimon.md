@@ -49,3 +49,9 @@ Verifica: `journalctl --user -b | grep -i 'minimon.*NVML'` → `Successfully con
 
 - Verificato: task completa eseguita; rimosso il Flatpak (non era nel pannello), applet nativo nel pannello.
 - GPU AMD: nel journal l'errore NVML è normale (nessuna NVIDIA); visualizzazione della GPU AMD non verificata.
+
+## Stato (2026-11-24, t14)
+
+- Verificato: task completa eseguita; rimosso il Flatpak (non era nel pannello), applet nativo nel pannello.
+- Tolto a mano `io.github.cosmic_utils.sysinfo-applet` dal pannello: minimon lo sostituisce.
+- GPU AMD (Renoir integrata): visualizzazione della GPU non verificata.

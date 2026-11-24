@@ -64,3 +64,8 @@ in `~/.config/autostart/`.
 
 - Layout COSMIC `us` intl + `it`: profile con `keyboard-us-intl` e `keyboard-it`.
 - Verificato: tasti morti e passaggio a `it` con Ctrl+Space, con fcitx5 avviato a mano.
+
+## Stato (2026-11-24, t14)
+
+- Non applicato: in COSMIC c'è solo il layout `it`, quindi niente tasti morti da comporre.
+  Il `profile` del repo metterebbe `us-intl` come predefinito.
