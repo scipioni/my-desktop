@@ -44,3 +44,8 @@ Verifica: `journalctl --user -b | grep -i 'minimon.*NVML'` → `Successfully con
 - Verificato: minimon 1.3.0 compilato e in esecuzione nel pannello.
 - Verificato: la modifica di `plugins_wings` funziona sia sul formato del default di sistema sia sul file
   già personalizzato (prova su copie). La task completa non è stata rieseguita da zero.
+
+## Stato (2026-11-24, hp)
+
+- Verificato: task completa eseguita; rimosso il Flatpak (non era nel pannello), applet nativo nel pannello.
+- GPU AMD: nel journal l'errore NVML è normale (nessuna NVIDIA); visualizzazione della GPU AMD non verificata.

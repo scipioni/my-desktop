@@ -26,7 +26,9 @@ La task fa:
 1. `sudo pacman -S --needed fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool`
    (l'autostart arriva dal pacchetto: `/etc/xdg/autostart/org.fcitx.Fcitx5.desktop`)
 2. copia [`fcitx5/profile`](fcitx5/profile) in `~/.config/fcitx5/profile`
-   (unico metodo di input `keyboard-us-intl`, stesso layout di COSMIC)
+   (metodi di input `keyboard-us-intl` e `keyboard-it`, gli stessi layout di COSMIC;
+   si passa dall'uno all'altro con Ctrl+Space o dall'icona di fcitx5, non dal selettore
+   dei layout di COSMIC, perché fcitx5 prende in carico la tastiera)
 3. copia [`fcitx5/fcitx5.conf`](fcitx5/fcitx5.conf) in `~/.config/environment.d/fcitx5.conf`:
    - **niente `GTK_IM_MODULE`**: GTK3/GTK4 usano il protocollo Wayland `text-input-v3`
    - `QT_IM_MODULES=wayland;fcitx`, `QT_IM_MODULE=fcitx` (Qt)
@@ -57,3 +59,8 @@ in `~/.config/autostart/`.
 
 - Verificato: Ghostty e COSMIC Terminal compongono i tasti morti con fcitx5 avviato a mano.
 - Da verificare: avvio automatico di fcitx5 e variabili caricate dopo logout/login.
+
+## Stato (2026-11-24, hp)
+
+- Layout COSMIC `us` intl + `it`: profile con `keyboard-us-intl` e `keyboard-it`.
+- Verificato: tasti morti e passaggio a `it` con Ctrl+Space, con fcitx5 avviato a mano.
