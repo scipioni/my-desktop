@@ -120,6 +120,29 @@ tasks:
       - chezmoi init cubo:~/dotfiles.git
       - chezmoi apply
 
+  cosmic:fcitx5:
+    desc: fcitx5 input method on COSMIC (dead keys us+intl in GTK4/Ghostty), see cosmic/fcitx5.md
+    cmds:
+      - sudo pacman -S --needed --noconfirm fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool
+      - mkdir -p ~/.config/fcitx5 ~/.config/environment.d
+      - cp cosmic/fcitx5/profile ~/.config/fcitx5/profile
+      - cp cosmic/fcitx5/fcitx5.conf ~/.config/environment.d/fcitx5.conf
+      - rm -f ~/.config/environment.d/gtk-im.conf
+      - echo "logout/login to apply"
+
+  cosmic:minimon:
+    desc: system monitor applet (minimon) in COSMIC panel, see cosmic/minimon.md
+    cmds:
+      - yay -S --needed --noconfirm --removemake cosmic-ext-applet-minimon
+      # the Flatpak with the same id would take precedence and can't see NVIDIA GPUs (see cosmic/minimon.md)
+      - flatpak uninstall --user -y io.github.cosmic_utils.minimon-applet 2>/dev/null || true
+      - |
+        d=~/.config/cosmic/com.system76.CosmicPanel.Panel/v1
+        f=$d/plugins_wings
+        mkdir -p $d
+        [ -f $f ] || cp /usr/share/cosmic/com.system76.CosmicPanel.Panel/v1/plugins_wings $f
+        grep -q minimon-applet $f || perl -0pi -e 's/\]\s*,\s*\[/], [\n    "io.github.cosmic_utils.minimon-applet",/' $f
+
   gnome:save:
     desc: save settings
     cmds:
